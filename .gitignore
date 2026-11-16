@@ -1,0 +1,25 @@
+﻿# Archivos de compilacion Maven
+target/
+
+# Archivos de NetBeans
+nbproject/private/
+nbbuild/
+nbdist/
+.nb-gradle/
+
+# Archivos de IntelliJ y Eclipse
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Bases de datos locales
+data/
+*.db
+*.sqlite
+*.sqlite3

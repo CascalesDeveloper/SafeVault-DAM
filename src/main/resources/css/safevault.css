@@ -1,0 +1,374 @@
+
+/* =====================================================
+   SAFEVAULT DAM
+   Diseño claro inspirado en Dashlane y 1Password
+   ===================================================== */
+
+.root {
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 13px;
+    -fx-background-color: #FFFFFF;
+}
+
+.safevault-root {
+    -fx-background-color: #FFFFFF;
+}
+
+/* ================= MENÚ SUPERIOR ================= */
+
+.menu-bar {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 8 12 8 12;
+    -fx-border-color: transparent transparent #E5EAEC transparent;
+}
+
+.menu-bar .label {
+    -fx-text-fill: #38545D;
+    -fx-font-size: 13px;
+}
+
+.menu:hover,
+.menu:showing {
+    -fx-background-color: #EAF3F5;
+    -fx-background-radius: 5;
+}
+
+.context-menu {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #DCE5E8;
+    -fx-padding: 5;
+}
+
+.menu-item .label {
+    -fx-text-fill: #38545D;
+}
+
+.menu-item:focused {
+    -fx-background-color: #EAF3F5;
+}
+
+/* ================= BARRA DE HERRAMIENTAS ================= */
+
+.tool-bar {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 11 16 11 16;
+    -fx-spacing: 9;
+    -fx-border-color: transparent transparent #E5EAEC transparent;
+}
+
+.tool-bar .button {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #38545D;
+    -fx-border-color: #D8E2E5;
+    -fx-border-width: 1;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 9 16 9 16;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+}
+
+.tool-bar .button:hover {
+    -fx-background-color: #EDF6F7;
+    -fx-border-color: #A9C9CE;
+}
+
+.tool-bar .button:pressed {
+    -fx-background-color: #DCECEF;
+}
+
+/* Botón principal */
+.tool-bar .primary-button {
+    -fx-background-color: #087F8C;
+    -fx-text-fill: #FFFFFF;
+    -fx-border-color: transparent;
+    -fx-font-weight: bold;
+}
+
+.tool-bar .primary-button:hover {
+    -fx-background-color: #066B76;
+}
+
+/* Botón eliminar */
+.tool-bar .danger-button {
+    -fx-text-fill: #D9534F;
+}
+
+.tool-bar .danger-button:hover {
+    -fx-background-color: #FFF0EF;
+    -fx-border-color: #EBC2BF;
+}
+
+.tool-bar .separator .line {
+    -fx-border-color: #E2E8EA;
+}
+
+/* ================= LATERAL IZQUIERDO ================= */
+
+.sidebar {
+    -fx-background-color: #DCE9ED;
+    -fx-padding: 20 13 18 13;
+    -fx-spacing: 14;
+    -fx-pref-width: 250px;
+    -fx-min-width: 220px;
+    -fx-border-color: transparent #CEDDE1 transparent transparent;
+}
+
+.sidebar-title {
+    -fx-text-fill: #6D8991;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-padding: 2 5 4 5;
+}
+
+.sidebar-item {
+    -fx-text-fill: #36545D;
+    -fx-font-size: 12px;
+    -fx-padding: 7 5 7 5;
+}
+
+.sidebar-item:hover {
+    -fx-text-fill: #087F8C;
+}
+
+/* ================= ÁRBOL DE CATEGORÍAS ================= */
+
+.tree-view {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 3;
+}
+
+.tree-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #36545D;
+    -fx-font-size: 13px;
+    -fx-padding: 10 8 10 8;
+}
+
+.tree-cell:hover {
+    -fx-background-color: #C9DDE2;
+    -fx-background-radius: 5;
+}
+
+.tree-cell:selected {
+    -fx-background-color: #BBD7DD;
+    -fx-text-fill: #126B78;
+    -fx-background-radius: 5;
+    -fx-font-weight: bold;
+}
+
+.tree-cell .tree-disclosure-node .arrow {
+    -fx-background-color: #68868E;
+}
+
+/* ================= CONTENIDO CENTRAL ================= */
+
+.main-content {
+    -fx-background-color: #FFFFFF;
+    -fx-padding: 27 28 25 28;
+    -fx-spacing: 13;
+}
+
+.heading {
+    -fx-text-fill: #263B43;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.subtitle {
+    -fx-text-fill: #84969C;
+    -fx-font-size: 13px;
+}
+
+/* ================= BUSCADOR ================= */
+
+.text-field {
+    -fx-background-color: #F7F9FA;
+    -fx-text-fill: #344B53;
+    -fx-prompt-text-fill: #94A5AA;
+    -fx-border-color: #DCE5E8;
+    -fx-border-width: 1;
+    -fx-border-radius: 7;
+    -fx-background-radius: 7;
+    -fx-padding: 12 14 12 14;
+    -fx-font-size: 13px;
+}
+
+.text-field:focused {
+    -fx-border-color: #168A96;
+    -fx-background-color: #FFFFFF;
+}
+
+/* ================= TABLA ================= */
+
+.table-view {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+    -fx-table-cell-border-color: transparent;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #FFFFFF;
+}
+
+.table-view .column-header {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: transparent transparent #E8EDEF transparent;
+    -fx-size: 42px;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #87969B;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.table-row-cell {
+    -fx-background-color: #FFFFFF;
+    -fx-cell-size: 55px;
+    -fx-border-color: transparent transparent #EDF0F1 transparent;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #FFFFFF;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #F1F8F9;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #E3F2F3;
+}
+
+.table-row-cell:selected .text {
+    -fx-fill: #087F8C;
+}
+
+.table-cell {
+    -fx-text-fill: #344B53;
+    -fx-font-size: 13px;
+    -fx-padding: 10 12 10 12;
+    -fx-border-color: transparent;
+}
+
+.table-view .placeholder .label {
+    -fx-text-fill: #94A5AA;
+}
+
+/* ================= PANEL DERECHO ================= */
+
+.details-panel {
+    -fx-background-color: #F8FAFB;
+    -fx-padding: 23 20 20 20;
+    -fx-pref-width: 270px;
+    -fx-min-width: 240px;
+    -fx-border-color: transparent transparent transparent #E5EAEC;
+}
+
+.details-title {
+    -fx-text-fill: #168A96;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.details-heading {
+    -fx-text-fill: #263B43;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.details-label {
+    -fx-text-fill: #89999E;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.details-value {
+    -fx-text-fill: #354F59;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+.details-info {
+    -fx-text-fill: #89999E;
+    -fx-font-size: 12px;
+}
+
+/* ================= SEPARADORES ================= */
+
+.separator .line {
+    -fx-border-color: #E4EAEC;
+}
+
+/* ================= BARRAS DE DESPLAZAMIENTO ================= */
+
+.scroll-bar:vertical,
+.scroll-bar:horizontal {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #C9D8DC;
+    -fx-background-radius: 5;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #A8C4CA;
+}
+
+/* Botones del panel de detalles */
+
+.details-panel .button {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #087F8C;
+    -fx-border-color: #D8E2E5;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 7 12 7 12;
+    -fx-cursor: hand;
+}
+
+.details-panel .button:hover {
+    -fx-background-color: #EAF3F5;
+    -fx-border-color: #A9C9CE;
+}
+/* Botones del panel de detalles */
+
+.details-panel .button {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #087F8C;
+    -fx-border-color: #D8E2E5;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 7 12 7 12;
+    -fx-cursor: hand;
+}
+
+.details-panel .button:hover {
+    -fx-background-color: #EAF3F5;
+    -fx-border-color: #A9C9CE;
+}
+
+/* Barra de tiempo del portapapeles */
+
+.details-panel .progress-bar {
+    -fx-accent: #16A085;
+    -fx-pref-height: 9px;
+    -fx-min-height: 9px;
+    -fx-max-height: 9px;
+}
+
+.details-panel .progress-bar .track {
+    -fx-background-color: #E5ECEE;
+    -fx-background-radius: 8;
+}
+
+.details-panel .progress-bar .bar {
+    -fx-background-color: #16A085;
+    -fx-background-radius: 8;
+    -fx-background-insets: 0;
+}
