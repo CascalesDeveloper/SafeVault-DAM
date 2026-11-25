@@ -1,65 +1,107 @@
+/*
+ * DOCUMENTACIÓN COMPLEMENTARIA DEL TEMA VISUAL DE VAULTIX
+ *
+ * Este archivo contiene reglas CSS de JavaFX. No ejecuta lógica Java ni
+ * almacena datos: define cómo se presentan los controles creados en las vistas.
+ *
+ * Cómo se aplican las reglas:
+ * - Una clase CSS se añade desde Java con getStyleClass().add("nombre").
+ * - Un selector como .nombre aplica estilos a los nodos que tengan esa clase.
+ * - Los pseudoestados :hover, :focused y :pressed representan estados
+ *   interactivos del control.
+ * - Las propiedades -fx-* son propiedades específicas del motor CSS de JavaFX.
+ *
+ * Mantener el estilo en este archivo evita mezclar diseño visual con lógica
+ * de negocio y facilita cambiar la apariencia sin reescribir los componentes.
+ */
+/*
+ * VAULTIX - DARK KNIGHT THEME
+ * Tema oscuro sobrio para JavaFX.
+ *
+ * Paleta:
+ *   Fondo principal:     #111318
+ *   Paneles:             #1B2028
+ *   Superficies:         #252D38
+ *   Bordes:              #3A4655
+ *   Texto principal:     #E5EAF0
+ *   Texto secundario:    #A0A7B2
+ *   Acento dorado:       #55B9E8
+ *
+ * El objetivo es mantener una interfaz discreta, legible y coherente,
+ * sin degradados, brillos ni efectos decorativos excesivos.
+ */
 
-/* =====================================================
-   SAFEVAULT DAM
-   Diseño claro inspirado en Dashlane y 1Password
-   ===================================================== */
+/* =========================================================
+   1. BASE GENERAL
+   ========================================================= */
 
 .root {
     -fx-font-family: "Segoe UI";
     -fx-font-size: 13px;
-    -fx-background-color: #FFFFFF;
+    -fx-background-color: #111318;
+    -fx-text-fill: #E5EAF0;
 }
 
 .safevault-root {
-    -fx-background-color: #FFFFFF;
+    -fx-background-color: #111318;
 }
 
-/* ================= MENÚ SUPERIOR ================= */
+/* =========================================================
+   2. MENÚ SUPERIOR
+   ========================================================= */
 
 .menu-bar {
-    -fx-background-color: #FFFFFF;
+    -fx-background-color: #1B2028;
     -fx-padding: 8 12 8 12;
-    -fx-border-color: transparent transparent #E5EAEC transparent;
+    -fx-border-color: transparent transparent #3A4655 transparent;
 }
 
 .menu-bar .label {
-    -fx-text-fill: #38545D;
+    -fx-text-fill: #DCE3EC;
     -fx-font-size: 13px;
 }
 
 .menu:hover,
 .menu:showing {
-    -fx-background-color: #EAF3F5;
+    -fx-background-color: #303B49;
     -fx-background-radius: 5;
 }
 
 .context-menu {
-    -fx-background-color: #FFFFFF;
-    -fx-border-color: #DCE5E8;
+    -fx-background-color: #252D38;
+    -fx-border-color: #465466;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
     -fx-padding: 5;
 }
 
 .menu-item .label {
-    -fx-text-fill: #38545D;
+    -fx-text-fill: #DCE3EC;
 }
 
 .menu-item:focused {
-    -fx-background-color: #EAF3F5;
+    -fx-background-color: #3A4655;
 }
 
-/* ================= BARRA DE HERRAMIENTAS ================= */
+.menu-item:focused .label {
+    -fx-text-fill: #8BD3F2;
+}
+
+/* =========================================================
+   3. BARRA DE HERRAMIENTAS
+   ========================================================= */
 
 .tool-bar {
-    -fx-background-color: #FFFFFF;
+    -fx-background-color: #1B2028;
     -fx-padding: 11 16 11 16;
     -fx-spacing: 9;
-    -fx-border-color: transparent transparent #E5EAEC transparent;
+    -fx-border-color: transparent transparent #3A4655 transparent;
 }
 
 .tool-bar .button {
-    -fx-background-color: #FFFFFF;
-    -fx-text-fill: #38545D;
-    -fx-border-color: #D8E2E5;
+    -fx-background-color: #252E39;
+    -fx-text-fill: #DCE3EC;
+    -fx-border-color: #465466;
     -fx-border-width: 1;
     -fx-border-radius: 6;
     -fx-background-radius: 6;
@@ -69,69 +111,73 @@
 }
 
 .tool-bar .button:hover {
-    -fx-background-color: #EDF6F7;
-    -fx-border-color: #A9C9CE;
+    -fx-background-color: #354252;
+    -fx-border-color: #8192A7;
 }
 
 .tool-bar .button:pressed {
-    -fx-background-color: #DCECEF;
+    -fx-background-color: #405064;
 }
 
-/* Botón principal */
+/* Botón principal: dorado discreto, sin efecto brillante. */
 .tool-bar .primary-button {
-    -fx-background-color: #087F8C;
-    -fx-text-fill: #FFFFFF;
+    -fx-background-color: #3D9FCB;
+    -fx-text-fill: #111318;
     -fx-border-color: transparent;
     -fx-font-weight: bold;
 }
 
 .tool-bar .primary-button:hover {
-    -fx-background-color: #066B76;
+    -fx-background-color: #55B9E8;
 }
 
-/* Botón eliminar */
+/* Acción destructiva: rojo apagado. */
 .tool-bar .danger-button {
-    -fx-text-fill: #D9534F;
+    -fx-text-fill: #E18A86;
 }
 
 .tool-bar .danger-button:hover {
-    -fx-background-color: #FFF0EF;
-    -fx-border-color: #EBC2BF;
+    -fx-background-color: #38282B;
+    -fx-border-color: #765052;
 }
 
 .tool-bar .separator .line {
-    -fx-border-color: #E2E8EA;
+    -fx-border-color: #465466;
 }
 
-/* ================= LATERAL IZQUIERDO ================= */
+/* =========================================================
+   4. PANEL LATERAL IZQUIERDO
+   ========================================================= */
 
 .sidebar {
-    -fx-background-color: #DCE9ED;
+    -fx-background-color: #1B2028;
     -fx-padding: 20 13 18 13;
     -fx-spacing: 14;
     -fx-pref-width: 250px;
     -fx-min-width: 220px;
-    -fx-border-color: transparent #CEDDE1 transparent transparent;
+    -fx-border-color: transparent #3A4655 transparent transparent;
 }
 
 .sidebar-title {
-    -fx-text-fill: #6D8991;
+    -fx-text-fill: #AAB6C5;
     -fx-font-size: 11px;
     -fx-font-weight: bold;
     -fx-padding: 2 5 4 5;
 }
 
 .sidebar-item {
-    -fx-text-fill: #36545D;
+    -fx-text-fill: #C8D2DE;
     -fx-font-size: 12px;
     -fx-padding: 7 5 7 5;
 }
 
 .sidebar-item:hover {
-    -fx-text-fill: #087F8C;
+    -fx-text-fill: #8BD3F2;
 }
 
-/* ================= ÁRBOL DE CATEGORÍAS ================= */
+/* =========================================================
+   5. ÁRBOL DE CATEGORÍAS
+   ========================================================= */
 
 .tree-view {
     -fx-background-color: transparent;
@@ -141,53 +187,59 @@
 
 .tree-cell {
     -fx-background-color: transparent;
-    -fx-text-fill: #36545D;
+    -fx-text-fill: #C8D2DE;
     -fx-font-size: 13px;
     -fx-padding: 10 8 10 8;
 }
 
 .tree-cell:hover {
-    -fx-background-color: #C9DDE2;
+    -fx-background-color: #2B3542;
     -fx-background-radius: 5;
 }
 
 .tree-cell:selected {
-    -fx-background-color: #BBD7DD;
-    -fx-text-fill: #126B78;
+    -fx-background-color: #3A4655;
+    -fx-text-fill: #8BD3F2;
     -fx-background-radius: 5;
     -fx-font-weight: bold;
 }
 
 .tree-cell .tree-disclosure-node .arrow {
-    -fx-background-color: #68868E;
+    -fx-background-color: #AAB6C5;
 }
 
-/* ================= CONTENIDO CENTRAL ================= */
+/* =========================================================
+   6. CONTENIDO CENTRAL
+   ========================================================= */
 
 .main-content {
-    -fx-background-color: #FFFFFF;
+    -fx-background-color: #111318;
     -fx-padding: 27 28 25 28;
     -fx-spacing: 13;
 }
 
 .heading {
-    -fx-text-fill: #263B43;
+    -fx-text-fill: #F0F3F7;
     -fx-font-size: 24px;
     -fx-font-weight: bold;
 }
 
 .subtitle {
-    -fx-text-fill: #84969C;
+    -fx-text-fill: #AAB6C5;
     -fx-font-size: 13px;
 }
 
-/* ================= BUSCADOR ================= */
+/* =========================================================
+   7. CAMPOS DE TEXTO Y BÚSQUEDA
+   ========================================================= */
 
-.text-field {
-    -fx-background-color: #F7F9FA;
-    -fx-text-fill: #344B53;
-    -fx-prompt-text-fill: #94A5AA;
-    -fx-border-color: #DCE5E8;
+.text-field,
+.password-field,
+.text-area {
+    -fx-background-color: #202630;
+    -fx-text-fill: #E1E5EB;
+    -fx-prompt-text-fill: #8B98A8;
+    -fx-border-color: #465466;
     -fx-border-width: 1;
     -fx-border-radius: 7;
     -fx-background-radius: 7;
@@ -195,180 +247,726 @@
     -fx-font-size: 13px;
 }
 
-.text-field:focused {
-    -fx-border-color: #168A96;
-    -fx-background-color: #FFFFFF;
+.text-field:focused,
+.password-field:focused,
+.text-area:focused {
+    -fx-border-color: #55B9E8;
+    -fx-background-color: #202630;
 }
 
-/* ================= TABLA ================= */
+.text-area .content {
+    -fx-background-color: #202630;
+    -fx-background-radius: 7;
+}
+
+/* =========================================================
+   8. COMBOBOX Y LISTAS DESPLEGABLES
+   ========================================================= */
+
+.combo-box-base {
+    -fx-background-color: #252E39;
+    -fx-border-color: #465466;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+}
+
+.combo-box-base:hover {
+    -fx-border-color: #8192A7;
+}
+
+.combo-box-base:focused {
+    -fx-border-color: #55B9E8;
+}
+
+.combo-box-base .list-cell {
+    -fx-text-fill: #E1E5EB;
+    -fx-background-color: transparent;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: #252D38;
+    -fx-border-color: #465466;
+}
+
+.combo-box-popup .list-cell {
+    -fx-background-color: #252D38;
+    -fx-text-fill: #DCE3EC;
+    -fx-padding: 8 10 8 10;
+}
+
+.combo-box-popup .list-cell:hover,
+.combo-box-popup .list-cell:filled:selected {
+    -fx-background-color: #405064;
+    -fx-text-fill: #8BD3F2;
+}
+
+.combo-box-base .arrow {
+    -fx-background-color: #B8C0CB;
+}
+
+/* =========================================================
+   9. TABLA DE CREDENCIALES
+   ========================================================= */
 
 .table-view {
-    -fx-background-color: #FFFFFF;
+    -fx-background-color: #111318;
     -fx-border-color: transparent;
     -fx-padding: 0;
     -fx-table-cell-border-color: transparent;
 }
 
 .table-view .column-header-background {
-    -fx-background-color: #FFFFFF;
+    -fx-background-color: #111318;
 }
 
 .table-view .column-header {
-    -fx-background-color: #FFFFFF;
-    -fx-border-color: transparent transparent #E8EDEF transparent;
+    -fx-background-color: #111318;
+    -fx-border-color: transparent transparent #3A4655 transparent;
     -fx-size: 42px;
 }
 
 .table-view .column-header .label {
-    -fx-text-fill: #87969B;
+    -fx-text-fill: #AAB6C5;
     -fx-font-size: 11px;
     -fx-font-weight: bold;
     -fx-alignment: CENTER_LEFT;
 }
 
 .table-row-cell {
-    -fx-background-color: #FFFFFF;
+    -fx-background-color: #111318;
     -fx-cell-size: 55px;
-    -fx-border-color: transparent transparent #EDF0F1 transparent;
+    -fx-border-color: transparent transparent #252B34 transparent;
 }
 
 .table-row-cell:odd {
-    -fx-background-color: #FFFFFF;
+    -fx-background-color: #141820;
 }
 
 .table-row-cell:hover {
-    -fx-background-color: #F1F8F9;
+    -fx-background-color: #202630;
 }
 
 .table-row-cell:selected {
-    -fx-background-color: #E3F2F3;
+    -fx-background-color: #3A4655;
 }
 
 .table-row-cell:selected .text {
-    -fx-fill: #087F8C;
+    -fx-fill: #8BD3F2;
 }
 
 .table-cell {
-    -fx-text-fill: #344B53;
+    -fx-text-fill: #DCE3EC;
     -fx-font-size: 13px;
     -fx-padding: 10 12 10 12;
     -fx-border-color: transparent;
 }
 
 .table-view .placeholder .label {
-    -fx-text-fill: #94A5AA;
+    -fx-text-fill: #8B98A8;
 }
 
-/* ================= PANEL DERECHO ================= */
+/* =========================================================
+   10. PANEL DERECHO DE DETALLES
+   ========================================================= */
 
 .details-panel {
-    -fx-background-color: #F8FAFB;
+    -fx-background-color: #1B2028;
     -fx-padding: 23 20 20 20;
     -fx-pref-width: 270px;
     -fx-min-width: 240px;
-    -fx-border-color: transparent transparent transparent #E5EAEC;
+    -fx-border-color: transparent transparent transparent #3A4655;
 }
 
 .details-title {
-    -fx-text-fill: #168A96;
+    -fx-text-fill: #55B9E8;
     -fx-font-size: 11px;
     -fx-font-weight: bold;
 }
 
 .details-heading {
-    -fx-text-fill: #263B43;
+    -fx-text-fill: #F0F3F7;
     -fx-font-size: 18px;
     -fx-font-weight: bold;
 }
 
 .details-label {
-    -fx-text-fill: #89999E;
+    -fx-text-fill: #AAB6C5;
     -fx-font-size: 11px;
     -fx-font-weight: bold;
 }
 
 .details-value {
-    -fx-text-fill: #354F59;
+    -fx-text-fill: #DCE3EC;
     -fx-font-size: 13px;
     -fx-font-weight: bold;
 }
 
 .details-info {
-    -fx-text-fill: #89999E;
+    -fx-text-fill: #AAB6C5;
     -fx-font-size: 12px;
 }
 
-/* ================= SEPARADORES ================= */
-
-.separator .line {
-    -fx-border-color: #E4EAEC;
+/* Botones dentro del panel derecho. */
+.details-panel .button {
+    -fx-background-color: #252E39;
+    -fx-text-fill: #8BD3F2;
+    -fx-border-color: #465466;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 7 12 7 12;
+    -fx-cursor: hand;
 }
 
-/* ================= BARRAS DE DESPLAZAMIENTO ================= */
+.details-panel .button:hover {
+    -fx-background-color: #354252;
+    -fx-border-color: #8192A7;
+}
+
+/* =========================================================
+   11. BOTONES DE HERRAMIENTAS DEL PANEL IZQUIERDO
+   ========================================================= */
+
+/*
+ * Los botones de herramientas deben integrarse en la navegación.
+ * Esta regla evita que hereden un aspecto gris o claro de JavaFX.
+ */
+.sidebar .button,
+.sidebar-item.button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #C8D2DE;
+    -fx-border-color: transparent;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-padding: 8 10 8 10;
+    -fx-font-size: 13px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-cursor: hand;
+}
+
+.sidebar .button:hover,
+.sidebar-item.button:hover {
+    -fx-background-color: #2B3542;
+    -fx-text-fill: #8BD3F2;
+}
+
+.sidebar .button:pressed,
+.sidebar-item.button:pressed {
+    -fx-background-color: #3A4655;
+}
+
+/* =========================================================
+   12. SEPARADORES
+   ========================================================= */
+
+.separator .line {
+    -fx-border-color: #3A4655;
+}
+
+/* =========================================================
+   13. BARRAS DE DESPLAZAMIENTO
+   ========================================================= */
 
 .scroll-bar:vertical,
 .scroll-bar:horizontal {
     -fx-background-color: transparent;
 }
 
+.scroll-bar .track {
+    -fx-background-color: transparent;
+}
+
 .scroll-bar .thumb {
-    -fx-background-color: #C9D8DC;
+    -fx-background-color: #465466;
     -fx-background-radius: 5;
 }
 
 .scroll-bar .thumb:hover {
-    -fx-background-color: #A8C4CA;
+    -fx-background-color: #718197;
 }
 
-/* Botones del panel de detalles */
-
-.details-panel .button {
-    -fx-background-color: #FFFFFF;
-    -fx-text-fill: #087F8C;
-    -fx-border-color: #D8E2E5;
-    -fx-border-radius: 6;
-    -fx-background-radius: 6;
-    -fx-padding: 7 12 7 12;
-    -fx-cursor: hand;
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button {
+    -fx-background-color: transparent;
 }
 
-.details-panel .button:hover {
-    -fx-background-color: #EAF3F5;
-    -fx-border-color: #A9C9CE;
-}
-/* Botones del panel de detalles */
-
-.details-panel .button {
-    -fx-background-color: #FFFFFF;
-    -fx-text-fill: #087F8C;
-    -fx-border-color: #D8E2E5;
-    -fx-border-radius: 6;
-    -fx-background-radius: 6;
-    -fx-padding: 7 12 7 12;
-    -fx-cursor: hand;
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+    -fx-background-color: #AAB6C5;
 }
 
-.details-panel .button:hover {
-    -fx-background-color: #EAF3F5;
-    -fx-border-color: #A9C9CE;
-}
-
-/* Barra de tiempo del portapapeles */
+/* =========================================================
+   14. BARRA DEL TEMPORIZADOR DEL PORTAPAPELES
+   ========================================================= */
 
 .details-panel .progress-bar {
-    -fx-accent: #16A085;
+    -fx-accent: #55B9E8;
     -fx-pref-height: 9px;
     -fx-min-height: 9px;
     -fx-max-height: 9px;
 }
 
 .details-panel .progress-bar .track {
-    -fx-background-color: #E5ECEE;
+    -fx-background-color: #3A4655;
     -fx-background-radius: 8;
 }
 
 .details-panel .progress-bar .bar {
-    -fx-background-color: #16A085;
+    -fx-background-color: #55B9E8;
     -fx-background-radius: 8;
     -fx-background-insets: 0;
+}
+
+/* =========================================================
+   15. ALERTAS, DIÁLOGOS Y VENTANAS EMERGENTES
+   ========================================================= */
+
+.dialog-pane {
+    -fx-background-color: #1B2028;
+    -fx-border-color: #465466;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: #252D38;
+}
+
+.dialog-pane .header-panel .label {
+    -fx-text-fill: #F0F3F7;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+
+.dialog-pane .content {
+    -fx-text-fill: #C8D2DE;
+}
+
+.dialog-pane .label {
+    -fx-text-fill: #DCE3EC;
+}
+
+.dialog-pane .button {
+    -fx-background-color: #2B3542;
+    -fx-text-fill: #DCE3EC;
+    -fx-border-color: #526174;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 7 14 7 14;
+    -fx-cursor: hand;
+}
+
+.dialog-pane .button:hover {
+    -fx-background-color: #405064;
+    -fx-border-color: #8192A7;
+}
+
+.dialog-pane .button:default {
+    -fx-background-color: #3D9FCB;
+    -fx-text-fill: #111318;
+    -fx-border-color: transparent;
+    -fx-font-weight: bold;
+}
+
+.dialog-pane .button:default:hover {
+    -fx-background-color: #55B9E8;
+}
+
+/* =========================================================
+   16. PISTAS Y MENSAJES AUXILIARES
+   ========================================================= */
+
+.tooltip {
+    -fx-background-color: #303B49;
+    -fx-text-fill: #F0F3F7;
+    -fx-border-color: #526174;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-padding: 6 9 6 9;
+    -fx-font-size: 12px;
+}
+
+/* =========================================================
+   FIN DEL TEMA VAULTIX - DARK KNIGHT
+   ========================================================= */
+
+
+/* =========================================================
+   17. CABECERA VAULTIX CON BOTONES
+   ========================================================= */
+
+/*
+ * Una única superficie grafito y un borde inferior fino.
+ * Se evita el uso de degradados y sombras para mantener la estética sobria.
+ */
+.vaultix-topbar {
+    -fx-background-color: #1B2028;
+    -fx-padding: 12 18 12 18;
+    -fx-spacing: 9;
+    -fx-alignment: CENTER_LEFT;
+    -fx-border-color: transparent transparent #3A4655 transparent;
+}
+
+/* Identidad de marca: nombre y descriptor breve. */
+.vaultix-brand-block {
+    -fx-padding: 0 12 0 0;
+}
+
+.vaultix-brand {
+    -fx-text-fill: #F0F3F7;
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+}
+
+.vaultix-brand-subtitle {
+    -fx-text-fill: #AAB6C5;
+    -fx-font-size: 8px;
+    -fx-font-weight: bold;
+}
+
+/* Separador vertical que divide la marca de las acciones. */
+.vaultix-topbar .separator:vertical .line {
+    -fx-border-color: #465466;
+    -fx-border-width: 0 0 0 1;
+}
+
+/* Botones de acción normales. */
+.vaultix-topbar .topbar-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #C8D2DE;
+    -fx-border-color: transparent;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 8 11 8 11;
+    -fx-font-size: 12px;
+    -fx-cursor: hand;
+}
+
+.vaultix-topbar .topbar-button:hover {
+    -fx-background-color: #303B49;
+    -fx-text-fill: #8BD3F2;
+}
+
+.vaultix-topbar .topbar-button:pressed {
+    -fx-background-color: #405064;
+}
+
+/* Botón principal para crear credenciales. */
+.vaultix-topbar .topbar-primary {
+    -fx-background-color: #3D9FCB;
+    -fx-text-fill: #111318;
+    -fx-border-color: transparent;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 8 13 8 13;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+}
+
+.vaultix-topbar .topbar-primary:hover {
+    -fx-background-color: #55B9E8;
+}
+
+/* Botón de eliminación: rojo apagado para indicar precaución. */
+.vaultix-topbar .topbar-danger {
+    -fx-background-color: transparent;
+    -fx-text-fill: #D58B88;
+    -fx-border-color: transparent;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-padding: 8 11 8 11;
+    -fx-font-size: 12px;
+    -fx-cursor: hand;
+}
+
+.vaultix-topbar .topbar-danger:hover {
+    -fx-background-color: #38282B;
+    -fx-text-fill: #F0A5A1;
+}
+
+/* Separador corto entre grupos de acciones. */
+.vaultix-topbar .topbar-separator {
+    -fx-background-color: #465466;
+    -fx-pref-width: 1;
+    -fx-min-width: 1;
+    -fx-max-width: 1;
+    -fx-pref-height: 22;
+    -fx-min-height: 22;
+    -fx-max-height: 22;
+}
+
+
+/* =========================================================
+   18. AJUSTES DE LEGIBILIDAD Y ACCESIBILIDAD
+   ========================================================= */
+
+/* Los textos de ayuda deben seguir siendo secundarios, pero claramente visibles. */
+.text-field,
+.password-field,
+.text-area {
+    -fx-prompt-text-fill: #AAB6C5;
+}
+
+/* Texto de los botones estándar y estados de foco. */
+.button {
+    -fx-text-fill: #E5EAF0;
+}
+
+.button:focused,
+.text-field:focused,
+.password-field:focused,
+.text-area:focused,
+.combo-box-base:focused {
+    -fx-border-color: #55B9E8;
+}
+
+/* Mantener el texto seleccionado legible. */
+.text-field .text,
+.password-field .text,
+.text-area .text {
+    -fx-fill: #E5EAF0;
+}
+
+
+/* =========================================================
+   19. PANTALLA DE ACCESO Y CONFIGURACIÓN INICIAL
+   ========================================================= */
+
+/* Fondo y panel principal del formulario de acceso. */
+.vaultix-login-root {
+    -fx-background-color: #111318;
+}
+
+.vaultix-login-panel {
+    -fx-background-color: #191F28;
+    -fx-background-radius: 12;
+    -fx-border-color: #354252;
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+}
+
+/* Logotipo: contenedor transparente para respetar el PNG. */
+.vaultix-login-logo-container,
+.vaultix-login-logo {
+    -fx-background-color: transparent;
+    -fx-alignment: CENTER;
+}
+
+.vaultix-login-logo-letter {
+    -fx-text-fill: #55B9E8;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 54px;
+    -fx-font-weight: bold;
+}
+
+/* Identidad de marca. */
+.vaultix-login-brand {
+    -fx-text-fill: #F0F3F7;
+    -fx-font-size: 21px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 2px;
+}
+
+.vaultix-login-subtitle {
+    -fx-text-fill: #AAB6C5;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+/* Título y texto explicativo: colores explícitos para evitar el texto negro
+   predeterminado de JavaFX en fondos oscuros. */
+.vaultix-login-heading {
+    -fx-text-fill: #F0F3F7;
+    -fx-font-size: 19px;
+    -fx-font-weight: bold;
+}
+
+.vaultix-login-description {
+    -fx-text-fill: #B8C4D2;
+    -fx-font-size: 13px;
+}
+
+/* Etiquetas de usuario y contraseñas. */
+.vaultix-login-field-label {
+    -fx-text-fill: #DCE3EC;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+/* Campos específicos de la pantalla de acceso. */
+.vaultix-login-input {
+    -fx-background-color: #202630;
+    -fx-text-fill: #F0F3F7;
+    -fx-prompt-text-fill: #AAB6C5;
+    -fx-border-color: #465466;
+    -fx-border-width: 1;
+    -fx-border-radius: 7;
+    -fx-background-radius: 7;
+    -fx-padding: 12 14 12 14;
+    -fx-font-size: 14px;
+}
+
+.vaultix-login-input:focused {
+    -fx-background-color: #252E39;
+    -fx-border-color: #55B9E8;
+}
+
+/* Botón principal: texto oscuro para que contraste con el fondo azul claro. */
+.vaultix-login-button {
+    -fx-background-color: #75C7EA;
+    -fx-text-fill: #10202B;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-color: #9ADBF4;
+    -fx-padding: 11 16 11 16;
+    -fx-cursor: hand;
+}
+
+.vaultix-login-button:hover {
+    -fx-background-color: #91D7F4;
+}
+
+.vaultix-login-button:pressed {
+    -fx-background-color: #55B9E8;
+}
+
+.vaultix-login-button:disabled {
+    -fx-opacity: 0.75;
+}
+
+/* Mensajes de validación. */
+.vaultix-login-status {
+    -fx-text-fill: #DCE3EC;
+    -fx-font-size: 12px;
+}
+
+.vaultix-login-status-error {
+    -fx-text-fill: #FF8F8F;
+}
+
+.vaultix-login-status-success {
+    -fx-text-fill: #83D6B0;
+}
+
+/* Pie de pantalla: visible, pero menos destacado que el formulario. */
+.vaultix-login-security-note {
+    -fx-text-fill: #AAB6C5;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.vaultix-login-copyright {
+    -fx-text-fill: #8F9CAD;
+    -fx-font-size: 11px;
+}
+
+
+/* =========================================================
+   18. POLÍTICA Y AYUDA DE CONTRASEÑA MAESTRA (VAULTIX)
+   ========================================================= */
+
+.vaultix-password-help {
+    -fx-background-color: #202630;
+    -fx-background-radius: 10;
+    -fx-border-color: #3A4655;
+    -fx-border-radius: 10;
+    -fx-padding: 12 14 12 14;
+}
+
+.vaultix-password-help-title {
+    -fx-text-fill: #E5EAF0;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.vaultix-password-info-icon {
+    -fx-background-color: #303B49;
+    -fx-background-radius: 20;
+    -fx-border-color: #55B9E8;
+    -fx-border-radius: 20;
+    -fx-text-fill: #8BD3F2;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-min-width: 19px;
+    -fx-min-height: 19px;
+    -fx-max-width: 19px;
+    -fx-max-height: 19px;
+    -fx-alignment: center;
+    -fx-cursor: hand;
+}
+
+.vaultix-password-rule-pending {
+    -fx-text-fill: #AAB6C5;
+    -fx-font-size: 11px;
+}
+
+.vaultix-password-rule-valid {
+    -fx-text-fill: #55C995;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.vaultix-password-rule-invalid {
+    -fx-text-fill: #D5A0A0;
+    -fx-font-size: 11px;
+}
+
+.vaultix-password-strength-bar {
+    -fx-spacing: 4px;
+}
+
+.vaultix-password-strength-segment {
+    -fx-background-color: #3A4655;
+    -fx-background-radius: 4px;
+    -fx-min-height: 5px;
+}
+
+.vaultix-strength-active-1 { -fx-background-color: #E05252; }
+.vaultix-strength-active-2 { -fx-background-color: #E5A94D; }
+.vaultix-strength-active-3 { -fx-background-color: #A6C85A; }
+.vaultix-strength-active-4 { -fx-background-color: #36B37E; }
+
+.vaultix-password-strength-label {
+    -fx-text-fill: #AAB6C5;
+    -fx-font-size: 11px;
+}
+
+.vaultix-confirmation-status {
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.vaultix-confirmation-error {
+    -fx-text-fill: #F07878;
+}
+
+.vaultix-confirmation-success {
+    -fx-text-fill: #55C995;
+}
+
+
+/* =========================================================
+   DISTRIBUCIÓN HORIZONTAL DEL REGISTRO DE VAULTIX
+   ========================================================= */
+.vaultix-registration-columns {
+    -fx-alignment: TOP-CENTER;
+    -fx-spacing: 24px;
+}
+
+.vaultix-registration-column {
+    -fx-spacing: 14px;
+}
+
+.vaultix-password-strength-block {
+    -fx-background-color: #202630;
+    -fx-background-radius: 9px;
+    -fx-border-color: #3A4655;
+    -fx-border-radius: 9px;
+    -fx-padding: 12px 14px 12px 14px;
+}
+
+/* En pantallas estrechas, JavaFX puede reducir el espacio disponible;
+   se permite que las columnas ajusten su anchura sin desbordarse. */
+.vaultix-registration-columns > .vaultix-registration-column {
+    -fx-min-width: 0;
 }
